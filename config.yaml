@@ -1,0 +1,28 @@
+# PBS flags
+queue: normal
+project: e14
+walltime: 5:00:00
+ncpus: 1920
+mem: 3840GB
+jobname: NYF
+
+#collate_walltime: 10:00:00
+#collate_mem: 16GB
+collate_walltime: 24:00:00
+collate_mem: 128GB
+collate_ncpus: 16
+collate_queue: express
+collate_flags: -n4 -z -m -r
+
+# Model config
+model: mom
+shortpath: /short/v45
+#exe: mom51_sis_xgrid
+exe: /short/v45/aph502/mom/bin/fms_MOM_SIS.intel14.fpe0.O2.ompi1.10.2
+input: gfdl_nyf_1080
+collate: true
+
+# Misc
+stacksize: unlimited
+
+qsub_flags: -lother=hyperthread
